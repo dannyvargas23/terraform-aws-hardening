@@ -3,7 +3,7 @@ resource "aws_s3_bucket" "cloudtrail" {
   bucket = "cloudtrail-${data.aws_caller_identity.current.account_id}"
 
   logging {
-    target_bucket = "${aws_s3_bucket.cloudtrail_logging.id}"
+    target_bucket = aws_s3_bucket.cloudtrail_logging.id
     target_prefix = "cloudtrail/"
   }
 
@@ -24,7 +24,7 @@ resource "aws_s3_bucket" "cloudtrail_logging" {
 
 # Cloudtrail bucket policy
 resource "aws_s3_bucket_policy" "cloudtrail" {
-  bucket = "${aws_s3_bucket.cloudtrail.id}"
+  bucket = aws_s3_bucket.cloudtrail.id
 
   policy = <<POLICY
 {
@@ -119,21 +119,21 @@ EOF
 }
 
 resource "aws_iam_role_policy_attachment" "cloudtrail_cloudwatch" {
-  role       = "${aws_iam_role.cloudtrail_cloudwatch.name}"
-  policy_arn = "${aws_iam_policy.cloudtrail_cloudwatch.arn}"
+  role       = aws_iam_role.cloudtrail_cloudwatch.name
+  policy_arn = aws_iam_policy.cloudtrail_cloudwatch.arn
 }
 
 resource "aws_cloudtrail" "default" {
   name                          = "default-trail"
-  s3_bucket_name                = "${aws_s3_bucket.cloudtrail.id}"
+  s3_bucket_name                = aws_s3_bucket.cloudtrail.id
   s3_key_prefix                 = "default"
   enable_logging                = true
   include_global_service_events = true
   is_multi_region_trail         = true
   enable_log_file_validation    = true
-  cloud_watch_logs_role_arn     = "${aws_iam_role.cloudtrail_cloudwatch.arn}"
-  cloud_watch_logs_group_arn    = "${aws_cloudwatch_log_group.cloudtrail.arn}"
-  kms_key_id                    = "${aws_kms_key.cloudtrail.arn}"
+  cloud_watch_logs_role_arn     = aws_iam_role.cloudtrail_cloudwatch.arn
+  cloud_watch_logs_group_arn    = aws_cloudwatch_log_group.cloudtrail.arn
+  kms_key_id                    = aws_kms_key.cloudtrail.arn
 }
 
 # KMS key for CloudTrail log encryption
@@ -203,5 +203,5 @@ EOF
 
 resource "aws_kms_alias" "cloudtrail" {
   name          = "alias/cloudtrail"
-  target_key_id = "${aws_kms_key.cloudtrail.key_id}"
+  target_key_id = aws_kms_key.cloudtrail.key_id
 }

@@ -1,7 +1,7 @@
 ## Global account hardening
 module "aws-global" {
   aws_region = "us-east-1"
-  source     = "modules/hardening-global"
+  source     = "./modules/hardening-global"
 }
 
 ## Region-specific hardening
@@ -12,7 +12,7 @@ module "aws-us-east-2" {
   aws_config_bucket     = "${module.aws-global.aws_config_bucket}"
   aws_config_role_arn   = "${module.aws-global.aws_config_role_arn}"
   aws_flowlogs_role_arn = "${module.aws-global.aws_flowlogs_role_arn}"
-  source                = "modules/hardening-region"
+  source                = "./modules/hardening-region"
 }
 
 module "aws-us-east-1" {
@@ -20,7 +20,7 @@ module "aws-us-east-1" {
   aws_config_bucket     = "${module.aws-global.aws_config_bucket}"
   aws_config_role_arn   = "${module.aws-global.aws_config_role_arn}"
   aws_flowlogs_role_arn = "${module.aws-global.aws_flowlogs_role_arn}"
-  source                = "modules/hardening-region"
+  source                = "./modules/hardening-region"
 }
 
 module "aws-us-west-1" {
@@ -28,7 +28,7 @@ module "aws-us-west-1" {
   aws_config_bucket     = "${module.aws-global.aws_config_bucket}"
   aws_config_role_arn   = "${module.aws-global.aws_config_role_arn}"
   aws_flowlogs_role_arn = "${module.aws-global.aws_flowlogs_role_arn}"
-  source                = "modules/hardening-region"
+  source                = "./modules/hardening-region"
 }
 
 module "aws-us-west-2" {
@@ -36,7 +36,7 @@ module "aws-us-west-2" {
   aws_config_bucket     = "${module.aws-global.aws_config_bucket}"
   aws_config_role_arn   = "${module.aws-global.aws_config_role_arn}"
   aws_flowlogs_role_arn = "${module.aws-global.aws_flowlogs_role_arn}"
-  source                = "modules/hardening-region"
+  source                = "./modules/hardening-region"
 }
 
 module "aws-ap-south-1" {
@@ -44,7 +44,7 @@ module "aws-ap-south-1" {
   aws_config_bucket     = "${module.aws-global.aws_config_bucket}"
   aws_config_role_arn   = "${module.aws-global.aws_config_role_arn}"
   aws_flowlogs_role_arn = "${module.aws-global.aws_flowlogs_role_arn}"
-  source                = "modules/hardening-region"
+  source                = "./modules/hardening-region"
 }
 
 module "aws-ap-northeast-2" {
@@ -52,7 +52,7 @@ module "aws-ap-northeast-2" {
   aws_config_bucket     = "${module.aws-global.aws_config_bucket}"
   aws_config_role_arn   = "${module.aws-global.aws_config_role_arn}"
   aws_flowlogs_role_arn = "${module.aws-global.aws_flowlogs_role_arn}"
-  source                = "modules/hardening-region"
+  source                = "./modules/hardening-region"
 }
 
 module "aws-ap-southeast-1" {
@@ -60,7 +60,7 @@ module "aws-ap-southeast-1" {
   aws_config_bucket     = "${module.aws-global.aws_config_bucket}"
   aws_config_role_arn   = "${module.aws-global.aws_config_role_arn}"
   aws_flowlogs_role_arn = "${module.aws-global.aws_flowlogs_role_arn}"
-  source                = "modules/hardening-region"
+  source                = "./modules/hardening-region"
 }
 
 module "aws-ap-southeast-2" {
@@ -68,7 +68,7 @@ module "aws-ap-southeast-2" {
   aws_config_bucket     = "${module.aws-global.aws_config_bucket}"
   aws_config_role_arn   = "${module.aws-global.aws_config_role_arn}"
   aws_flowlogs_role_arn = "${module.aws-global.aws_flowlogs_role_arn}"
-  source                = "modules/hardening-region"
+  source                = "./modules/hardening-region"
 }
 
 module "aws-ap-northeast-1" {
@@ -76,7 +76,7 @@ module "aws-ap-northeast-1" {
   aws_config_bucket     = "${module.aws-global.aws_config_bucket}"
   aws_config_role_arn   = "${module.aws-global.aws_config_role_arn}"
   aws_flowlogs_role_arn = "${module.aws-global.aws_flowlogs_role_arn}"
-  source                = "modules/hardening-region"
+  source                = "./modules/hardening-region"
 }
 
 module "aws-ca-central-1" {
@@ -84,7 +84,7 @@ module "aws-ca-central-1" {
   aws_config_bucket     = "${module.aws-global.aws_config_bucket}"
   aws_config_role_arn   = "${module.aws-global.aws_config_role_arn}"
   aws_flowlogs_role_arn = "${module.aws-global.aws_flowlogs_role_arn}"
-  source                = "modules/hardening-region"
+  source                = "./modules/hardening-region"
 }
 
 module "aws-eu-central-1" {
@@ -92,7 +92,7 @@ module "aws-eu-central-1" {
   aws_config_bucket     = "${module.aws-global.aws_config_bucket}"
   aws_config_role_arn   = "${module.aws-global.aws_config_role_arn}"
   aws_flowlogs_role_arn = "${module.aws-global.aws_flowlogs_role_arn}"
-  source                = "modules/hardening-region"
+  source                = "./modules/hardening-region"
 }
 
 module "aws-eu-west-1" {
@@ -100,7 +100,7 @@ module "aws-eu-west-1" {
   aws_config_bucket     = "${module.aws-global.aws_config_bucket}"
   aws_config_role_arn   = "${module.aws-global.aws_config_role_arn}"
   aws_flowlogs_role_arn = "${module.aws-global.aws_flowlogs_role_arn}"
-  source                = "modules/hardening-region"
+  source                = "./modules/hardening-region"
 }
 
 module "aws-eu-west-2" {
@@ -108,7 +108,7 @@ module "aws-eu-west-2" {
   aws_config_bucket     = "${module.aws-global.aws_config_bucket}"
   aws_config_role_arn   = "${module.aws-global.aws_config_role_arn}"
   aws_flowlogs_role_arn = "${module.aws-global.aws_flowlogs_role_arn}"
-  source                = "modules/hardening-region"
+  source                = "./modules/hardening-region"
 }
 
 module "aws-eu-west-3" {
@@ -116,7 +116,7 @@ module "aws-eu-west-3" {
   aws_config_bucket     = "${module.aws-global.aws_config_bucket}"
   aws_config_role_arn   = "${module.aws-global.aws_config_role_arn}"
   aws_flowlogs_role_arn = "${module.aws-global.aws_flowlogs_role_arn}"
-  source                = "modules/hardening-region"
+  source                = "./modules/hardening-region"
 }
 
 module "aws-eu-north-1" {
@@ -124,7 +124,7 @@ module "aws-eu-north-1" {
   aws_config_bucket     = "${module.aws-global.aws_config_bucket}"
   aws_config_role_arn   = "${module.aws-global.aws_config_role_arn}"
   aws_flowlogs_role_arn = "${module.aws-global.aws_flowlogs_role_arn}"
-  source                = "modules/hardening-region"
+  source                = "./modules/hardening-region"
 }
 
 module "aws-sa-east-1" {
@@ -132,7 +132,7 @@ module "aws-sa-east-1" {
   aws_config_bucket     = "${module.aws-global.aws_config_bucket}"
   aws_config_role_arn   = "${module.aws-global.aws_config_role_arn}"
   aws_flowlogs_role_arn = "${module.aws-global.aws_flowlogs_role_arn}"
-  source                = "modules/hardening-region"
+  source                = "./modules/hardening-region"
 }
 
 #module "aws-ap-northeast-3" {

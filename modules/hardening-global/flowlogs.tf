@@ -20,7 +20,7 @@ EOF
 
 resource "aws_iam_role_policy" "flowlogs" {
   name = "flowlogs-policy"
-  role = "${aws_iam_role.flowlogs.id}"
+  role = aws_iam_role.flowlogs.id
 
   policy = <<EOF
 {

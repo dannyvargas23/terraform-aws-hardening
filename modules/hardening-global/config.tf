@@ -28,7 +28,7 @@ POLICY
 
 resource "aws_iam_role_policy" "aws_config" {
   name = "aws-config-delivery"
-  role = "${aws_iam_role.aws_config.id}"
+  role = aws_iam_role.aws_config.id
 
   policy = <<POLICY
 {
@@ -50,6 +50,6 @@ POLICY
 }
 
 resource "aws_iam_role_policy_attachment" "aws_config" {
-  role       = "${aws_iam_role.aws_config.name}"
+  role       = aws_iam_role.aws_config.name
   policy_arn = "arn:aws:iam::aws:policy/service-role/AWSConfigRole"
 }
