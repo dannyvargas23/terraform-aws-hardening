@@ -36,7 +36,7 @@ This is the list of features provided by this module. When applicable, the relev
 ## How it works
 
 ### Requirements
-* [Terraform](https://learn.hashicorp.com/terraform/getting-started/install.html) >= 0.11
+* [Terraform](https://learn.hashicorp.com/terraform/getting-started/install.html) >= 0.12
 
 ### Usage
 Copy and paste into your Terraform configuration, and run `terraform init`:
@@ -45,7 +45,6 @@ module "aws-hardening" {
   source = "github.com/kiratech/terraform-aws-hardening"
 }
 ```
-
 ## Contributing
 Contributions are very welcome! Check out the [Guidelines](CONTRIBUTING.md) for instructions.
 
